@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code Generator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      text-align: center;
+    }
+    input {
+      padding: 0.5rem;
+      width: 80%;
+      max-width: 400px;
+      margin-bottom: 1rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      margin: 0.5rem;
+    }
+    canvas {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>QR Code Generator</h1>
+  <input id="text-input" type="text" placeholder="Enter text or URL" />
+  <br />
+  <button onclick="generateQRCode()">Generate</button>
+  <button onclick="downloadQRCode()">Download</button>
+  <div id="qrcode"></div>
+
+  <!-- Include QRCode library -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script>
+    let currentCanvas = null;
+
+    function generateQRCode() {
+      const text = document.getElementById("text-input").value;
+      const container = document.getElementById("qrcode");
+      container.innerHTML = ""; // Clear previous
+
+      if (!text.trim()) {
+        alert("Please enter a value.");
+        return;
+      }
+
+      QRCode.toCanvas(text, { width: 256 }, function (error, canvas) {
+        if (error) {
+          console.error(error);
+          alert("Failed to generate QR code.");
+          return;
+        }
+        currentCanvas = canvas;
+        container.appendChild(canvas);
+      });
+    }
+
+    function downloadQRCode() {
+      if (!currentCanvas) {
+        alert("Please generate a QR code first.");
+        return;
+      }
+      const link = document.createElement("a");
+      link.download = "qrcode.png";
+      link.href = currentCanvas.toDataURL("image/png");
+      link.click();
+    }
+  </script>
+</body>
+</html>

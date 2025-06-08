@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adventure Pals • Join the Adventure</title>
+  <link rel="stylesheet" href="style.css" />
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+  <div id="tsparticles"></div>
+  <div class="music-wave" id="musicWave"></div>
+
+  <div class="card">
+    <div id="adventureLogo">
+        <img id="logoImg" src="assets/adventure-pals-logo.png" alt="AventurePals.us"/>
+    </div>
+    <p class="tagline">Join the Adventure</p>
+
+    <div class="qr-container">
+      <img src="assets/qr-code.png" alt="QR Code to Adventure" />
+    </div>
+
+    <div class="links">
+      <a href="https://www.youtube.com/@adventurepals132" target="_blank">📺 Follow Us YouTube</a>
+      <a href="http://adventurepals.us/" target="_blank">🌐 Visit Website</a>
+    </div>
+
+    <footer>
+      <p>Made with ❤️ by the Pals</p>
+    </footer>
+  </div>
+
+  <div id="controls">
+    <!-- Music Player -->
+    <div class="music-control" onclick="toggleMusic()" title="Click to play theme music">
+        <img id="music-icon" src="assets/music-icon.svg" alt="Music Icon" />
+    </div>
+    
+    <!-- Web Icon -->
+    <div class="web-control" onclick="window.location.href" title="click to visit website">
+        <a href="http://adventurepals.us/" target="_blank" class="external-icon" title="Go to site">
+            <img id="web-icon" src="assets/earth.png" alt="Web Icon" />
+        </a>
+    </div>
+
+    <div class="yt-control" onclick="window.location.href" title="click to visit our channel">
+        <a href="https://www.youtube.com/@adventurepals132" target="_blank" class="external-icon" title="Go to adventurepals">
+            <img id="web-icon" src="assets/youtube.png" alt="Youtube Icon" />
+        </a>
+    </div>
+
+  </div>
+
+  <!-- Audio File -->
+  <audio id="bg-music" loop>
+    <source src="assets/bg-music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+  <script>
+    const musicWaveContainer = document.getElementById("musicWave");
+    for (let i = 0; i < 100; i++) {
+        const bar = document.createElement("div");
+        bar.className = "bar";
+        bar.style.setProperty("--i", i);
+        musicWaveContainer.appendChild(bar);
+    }
+  </script>
+  <script>
+    tsParticles.load("tsparticles", {
+      background: { color: "#ffffff", zIndex: -100 },
+      fpsLimit: 60,
+      interactivity: {
+        events: { onHover: { enable: true, mode: "repulse" } },
+        modes: { repulse: { distance: 100, duration: 0.4 } }
+      },
+      particles: {
+        number: { value: 80 },
+        color: { value: "#ff6b6b" },
+        shape: { type: "char", character: { 
+            value: [
+                "🏝️", // tropical island
+                "🎒", // backpack
+                "🗺️", // map
+                "🚤", // boat
+                "🏕️", // camping
+                "⛺",  // tent
+                "🌄", // mountain
+                "🌲", // evergreen tree
+                "🐾", // paw prints
+                "🚶", // walking
+                "🌟", // star
+                "🎈", // balloon
+                "✈️", // airplane
+                "📸"  // camera
+            ],
+            font: "Verdana",
+            style: "",
+            weight: "400"
+        } },
+        opacity: { value: 0.5 },
+        size: { value: { min: 1, max: 4 } },
+        move: { enable: true, speed: 1, direction: "none", outMode: "out" }
+      }
+    });
+  </script>
+</body>
+</html>
