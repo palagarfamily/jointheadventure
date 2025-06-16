@@ -38,6 +38,7 @@
   }
 
   .controls {
+    flex-direction: column;
     top: 2rem;
     right: 2rem;
     gap: 1rem;

@@ -31,51 +31,51 @@ const CONFIG = {
   media: [
     {
       type: "image",
-      src: "./assets/carousel/1.jpg",
+      src: "./assets/carousel/1_50.jpg",
     },
     {
       type: "image",
-      src: "./assets/carousel/2.jpg",
+      src: "./assets/carousel/2_50.jpg",
     },
     {
       type: "image",
-      src: "./assets/carousel/3.jpg",
+      src: "./assets/carousel/3_50.jpg",
     },
     {
       type: "image",
-      src: "./assets/carousel/4.jpg",
+      src: "./assets/carousel/4_50.jpg",
     },
     {
       type: "image",
-      src: "./assets/carousel/5.JPG",
+      src: "./assets/carousel/5_50.jpg",
     },
     {
       type: "image",
-      src: "./assets/carousel/6.jpg",
+      src: "./assets/carousel/6_50.jpg",
     },
     {
       type: "image",
-      src: "./assets/carousel/7.jpg",
+      src: "./assets/carousel/7_50.jpg",
     },
     {
       type: "image",
-      src: "./assets/carousel/8.jpg",
+      src: "./assets/carousel/8_50.jpg",
     },
     {
       type: "image",
-      src: "./assets/carousel/9.jpg",
+      src: "./assets/carousel/9_50.jpg",
     },
     {
       type: "image",
-      src: "./assets/carousel/10.JPG",
+      src: "./assets/carousel/10_50.jpg",
     },
     {
       type: "image",
-      src: "./assets/carousel/11.jpeg",
+      src: "./assets/carousel/11_50.jpeg",
     },
     {
       type: "image",
-      src: "./assets/carousel/12.JPG",
+      src: "./assets/carousel/12_50.jpg",
     },
   ],
   animations: {
@@ -1053,6 +1053,7 @@ function startFadeOut() {
       resetCarousel();
       carouselContainerEl.classList.add("carousel-container-fade-out");
       carouselContainerEl.style.backgroundColor = "transparent";
+      carouselContainerEl.style.zIndex = 0;
     },
   });
 }
