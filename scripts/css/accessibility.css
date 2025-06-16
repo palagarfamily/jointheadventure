@@ -1,0 +1,5 @@
+.control-btn:focus,
+.links a:focus {
+  outline: 2px solid var(--link-bg);
+  outline-offset: 2px;
+}

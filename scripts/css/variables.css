@@ -1,0 +1,38 @@
+:root {
+  --bg: #fff;
+  --text: #000;
+  --card-bg: #fff;
+  --link-bg: #ff6b6b;
+  --link-hover: #ff4b4b;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --control-bg: rgba(0, 0, 0, 0.8);
+  --control-hover: rgba(0, 0, 0, 0.9);
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
+  --color-gray-1: #1a1a1a;
+  --color-gray-2: #222222;
+  --color-gray-3: #2a2a2a;
+  --color-gray-4: #333333;
+  --color-gray-5: #3a3a3a;
+  --color-gray-6: #444444;
+  --color-gray-7: #4a4a4a;
+  --color-gray-8: #555555;
+  --card-width: 430px;
+  --card-height: 610px;
+  --card-border-radius: 6px;
+  --animation-duration-slow: 1.5s;
+  --animation-duration-medium: 1s;
+  --animation-duration-fast: 0.5s;
+  --transition-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.dark {
+  --bg: #fff;
+  --text: #000;
+  --card-bg: #fff;
+  --link-bg: #ff6b6b;
+  --link-hover: #ff4b4b;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --control-bg: rgba(0, 0, 0, 0.8);
+  --control-hover: rgba(0, 0, 0, 0.9);
+}
